@@ -11,9 +11,9 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "핏체크 — 우리 제품, 시장에 맞고 있을까? 매주 확인하세요",
+  title: "VOC → PMF — 고객 인터뷰, PMF 판단으로 이어지게",
   description:
-    "첫 제품을 낸 1인·초기 창업자를 위한 PMF 진단 도구예요. 고객 반응을 넣으면 이번 주 PMF 신호를 기준에 맞춰 정리해 드려요.",
+    "PMF 를 찾아가는 창업자를 위한 인터뷰 툴이에요. 인터뷰를 고객별로 쌓고, PMF 신호를 찾고, 누구에게 언제 다시 연락해 무엇을 물을지 알려 드려요.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

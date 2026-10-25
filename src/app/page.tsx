@@ -13,31 +13,31 @@ const glass = "backdrop-blur-xl";
 
 const pains = [
   {
-    title: "판단 기준이 없어요",
-    body: "PMF 를 무엇으로 판단하는지 기준이 없다.",
+    title: "기록이 쌓이지 않아요",
+    body: "인터뷰 기록이 녹음 파일 · 메모 앱 · 메신저에 흩어져 있다.",
   },
   {
-    title: "반응이 흩어져 있어요",
-    body: "고객 반응이 설문 · 메모 · 대화에 흩어져 있다.",
+    title: "판단으로 이어지지 않아요",
+    body: "기록은 있는데 “누가 왜 돈을 낼지”는 결국 감으로 정한다.",
   },
   {
-    title: "결국 감으로 판단해요",
-    body: "매주 직접 정리하느라 시간이 들고, 결국 감으로 판단한다.",
+    title: "다시 연락할 때를 놓쳐요",
+    body: "다시 만나야 할 고객과 시점을 놓친다.",
   },
 ];
 
 const steps = [
   {
-    name: "진단",
-    body: "몇 가지 질문에 답하면 지금 내 제품의 PMF 단계를 알려 줘요.",
+    name: "쌓기",
+    body: "녹음 파일을 올리거나 쓰던 회의 · 녹음 도구를 연결하면, 인터뷰가 고객별 · 시간순으로 쌓여요.",
   },
   {
-    name: "기록",
-    body: "이번 주 설문 응답 · 인터뷰 메모를 그대로 붙여 넣어요.",
+    name: "발굴",
+    body: "반복되는 문제, 돈을 낸 이유, 강한 신호와 약한 신호를 근거 원문과 함께 찾아 줘요. 결제 · 매출 데이터를 넣으면 고객이 한 말과 실제 결제를 맞춰 봐요.",
   },
   {
-    name: "리포트",
-    body: "PMF 신호(아쉬움 비율 · 재사용 · 추천 의향 등)를 기준에 맞춰 정리하고, 다음 주에 확인할 것을 제안해요.",
+    name: "알림",
+    body: "근거가 부족한 가설, 다시 연락할 고객, 추가 인터뷰가 필요한 시점을 알려 줘요.",
   },
 ];
 
@@ -58,35 +58,35 @@ function ExampleScreen() {
       <p className="mb-3 text-xs font-medium text-muted-foreground">예시 화면</p>
       <Card className={`${glass} gap-0 py-0`}>
         <CardHeader className="flex items-center justify-between gap-2 border-b py-4">
-          <CardTitle className="font-semibold">이번 주 PMF 리포트</CardTitle>
-          <Badge variant="secondary">주간</Badge>
+          <CardTitle className="font-semibold">다음 접점 알림</CardTitle>
+          <Badge variant="secondary">이번 주</Badge>
         </CardHeader>
         <CardContent className="flex flex-col gap-3 py-5">
           <Card size="sm" className="bg-accent text-accent-foreground ring-0">
             <CardContent className="flex flex-col gap-1">
-              <span className="text-xs font-semibold opacity-80">가장 강한 신호</span>
+              <span className="text-xs font-semibold opacity-80">다시 연락할 고객</span>
               <span className="text-sm font-medium">
-                “없어지면 아쉽다”는 답이 어떤 고객에게서 나왔는지
+                지난달 “돈 내고 쓰겠다”고 한 고객 — 3주째 연락 없음
               </span>
             </CardContent>
           </Card>
           <Card size="sm" className="bg-secondary ring-0">
             <CardContent className="flex flex-col gap-1">
               <span className="text-xs font-semibold text-muted-foreground">
-                가장 큰 경고
+                근거가 부족한 가설
               </span>
               <span className="text-sm font-medium">
-                한 번 쓰고 돌아오지 않은 고객의 공통점
+                “팀 단위로 결제할 것이다” — 근거 인터뷰 1건
               </span>
             </CardContent>
           </Card>
           <Card size="sm" className="bg-secondary ring-0">
             <CardContent className="flex flex-col gap-1">
               <span className="text-xs font-semibold text-muted-foreground">
-                다음 주에 확인할 것
+                물어볼 것
               </span>
               <span className="text-sm font-medium">
-                재사용한 고객에게 추천 의향 물어보기
+                지금은 무엇으로 이 문제를 풀고 있는지, 얼마를 쓰는지
               </span>
             </CardContent>
           </Card>
@@ -109,30 +109,30 @@ export default function Home() {
         {/* 1. 히어로 */}
         <section className="mx-auto flex w-full max-w-5xl flex-col items-start gap-6 px-5 pt-20 pb-16 md:items-center md:px-8 md:pt-36 md:pb-28 md:text-center">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm font-semibold text-primary">핏체크 FitCheck</span>
+            <span className="text-sm font-semibold text-primary">VOC → PMF (가제)</span>
             <Badge variant="outline" className="text-muted-foreground">
-              연습용으로 만든 가상의 서비스예요
+              기획 단계의 서비스예요
             </Badge>
           </div>
           <h1 className="text-4xl leading-[1.15] font-extrabold tracking-tight md:text-6xl">
-            우리 제품, 시장에 맞고 있을까?
+            고객 인터뷰,
             <br />
-            <span className="text-primary">매주 확인하세요</span>
+            <span className="text-primary">PMF 판단으로 이어지게</span>
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-xl">
-            첫 제품을 낸 1인·초기 창업자를 위한 PMF 진단 도구예요. 고객 반응을 넣으면
-            이번 주 PMF 신호를 기준에 맞춰 정리해 드려요.
+            PMF 를 찾아가는 창업자를 위한 인터뷰 툴이에요. 인터뷰를 고객별로 쌓고,
+            PMF 신호를 찾고, 누구에게 언제 다시 연락해 무엇을 물을지 알려 드려요.
           </p>
           <StartButton className="mt-2" />
         </section>
 
         {/* 2. 문제 */}
         <section className="reveal mx-auto w-full max-w-5xl px-5 py-16 md:px-8 md:py-28">
-          <SectionTitle eyebrow="문제" title="이게 된다는 신호일까요?" />
+          <SectionTitle eyebrow="문제" title="인터뷰는 했는데, 다음은요?" />
           <p className="mb-10 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            제품을 내고 몇 주가 지났어요. 가입자는 조금씩 생기는데, 이게 “된다”는
-            신호인지 그냥 지인 효과인지 모르겠어요. 설문 응답 · 인터뷰 메모 · 사용
-            기록은 여기저기 흩어져 있고, 정리하다 보면 한 주가 지나가요.
+            고객 인터뷰는 계속 하는데, 기록은 녹음 파일 · 메모 앱 · 메신저에 흩어져
+            있어요. 지난달 “이거 있으면 돈 내고 쓰겠다”던 고객에게 다시 연락할 때를
+            놓치고, “누가 왜 돈을 낼지”는 결국 감으로 정해요.
           </p>
           <div className="grid gap-4 md:grid-cols-3">
             {pains.map((p) => (
@@ -173,14 +173,14 @@ export default function Home() {
 
         {/* 4. 이래서 쓰게 돼요 */}
         <section className="reveal mx-auto w-full max-w-5xl px-5 py-16 md:px-8 md:py-28">
-          <SectionTitle eyebrow="이래서 쓰게 돼요" title="처음 한 번, 그리고 매주" />
+          <SectionTitle eyebrow="이래서 쓰게 돼요" title="처음 한 번, 그리고 쌓일수록" />
           <div className="grid gap-4 md:grid-cols-2">
             <Card className={glass}>
               <CardHeader className="gap-3">
                 <Badge variant="secondary">처음 써 보면 ✨</Badge>
                 <CardTitle className="text-xl leading-snug font-semibold">
-                  흩어진 메모를 붙여 넣자마자 “이번 주 가장 강한 신호와 가장 큰
-                  경고”가 한 장으로 정리돼 나와요.
+                  인터뷰를 올리면 “이번에 다시 연락할 고객과 물어볼 것”이 근거
+                  원문과 함께 나와요.
                 </CardTitle>
               </CardHeader>
             </Card>
@@ -188,8 +188,8 @@ export default function Home() {
               <CardHeader className="gap-3">
                 <Badge variant="secondary">계속 쓰게 되는 이유</Badge>
                 <CardTitle className="text-xl leading-snug font-semibold">
-                  매주 리포트가 쌓이면서 PMF 에 가까워지는지 멀어지는지 흐름이
-                  보여요.
+                  같은 고객의 이야기가 쌓일수록 “누가 왜 돈을 낼지”의 근거가
+                  짙어져요.
                 </CardTitle>
               </CardHeader>
             </Card>
@@ -198,27 +198,26 @@ export default function Home() {
 
         {/* 5. 다른 점 */}
         <section className="reveal mx-auto w-full max-w-3xl px-5 py-16 md:px-8 md:py-28">
-          <SectionTitle eyebrow="다른 점" title="기준 하나로, 매주 쌓아 가요" />
+          <SectionTitle eyebrow="다른 점" title="기록에서 멈추지 않아요" />
           <Card className={glass}>
             <CardContent className="flex flex-col gap-5 py-2 text-base leading-relaxed">
               <div className="flex flex-col gap-1">
-                <span className="font-semibold">엑셀 · 노션으로 직접 정리하면</span>
+                <span className="font-semibold">인터뷰 저장소 · 회의 노트 · 범용 AI 는</span>
                 <span className="text-muted-foreground">
-                  기준이 매번 달라지고 시간이 들어요.
+                  기록하고 요약해 주지만, 다시 연락할 때는 알려 주지 않아요.
                 </span>
               </div>
               <Separator />
               <div className="flex flex-col gap-1">
-                <span className="font-semibold">GPT 에 물어보면</span>
+                <span className="font-semibold">CRM · 노션 리마인더는</span>
                 <span className="text-muted-foreground">
-                  그때그때 답은 주지만, 지난주와 비교하거나 같은 기준을 계속
-                  적용하지는 않아요.
+                  날짜는 알려 주지만, 왜 · 무엇을 물어야 할지는 몰라요.
                 </span>
               </div>
               <Separator />
               <div className="flex flex-col gap-1">
-                <span className="font-semibold text-primary">핏체크는</span>
-                <span>PMF 기준 하나로 매주 쌓아 가며 변화를 보여 줘요.</span>
+                <span className="font-semibold text-primary">VOC → PMF 는</span>
+                <span>같은 고객을 오래 추적하며 다시 연락할 사람 · 시점 · 질문을 알려 줘요.</span>
               </div>
             </CardContent>
           </Card>
@@ -228,7 +227,7 @@ export default function Home() {
         <section className="reveal mx-auto w-full max-w-3xl px-5 py-16 md:px-8 md:py-28">
           <Card className={`${glass} items-center gap-5 px-6 py-12 text-center`}>
             <h2 className="text-2xl font-bold tracking-tight md:text-4xl">
-              이번 주 PMF, 감 말고 기준으로
+              고객의 말을, 다음 결정으로
             </h2>
             <p className="text-base text-muted-foreground">
               열리면 가장 먼저 써 보고 솔직한 의견을 들려주세요.
@@ -241,8 +240,9 @@ export default function Home() {
         <section className="reveal mx-auto w-full max-w-3xl px-5 py-16 md:px-8 md:py-28">
           <SectionTitle eyebrow="만든 사람" title="이수아" />
           <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-            1인 창업가 · 프리랜서로 일하며 “이게 정말 될까?”를 혼자 판단해야 하는
-            막막함을 직접 겪고 있어요.
+            1인 창업가 · 프리랜서로 일하며 고객 인터뷰를 직접 하고, 그 기록이 판단으로
+            이어지지 않는 막막함을 겪고 있어요. 제 인터뷰 기록으로 첫 사용자가 되어 직접
+            써 볼 거예요.
           </p>
         </section>
       </main>
@@ -251,7 +251,7 @@ export default function Home() {
       <footer className="mx-auto w-full max-w-5xl px-5 pb-12 md:px-8">
         <Separator className="mb-6" />
         <div className="flex flex-col gap-1 text-sm text-muted-foreground md:flex-row md:justify-between">
-          <span>© 2026 핏체크</span>
+          <span>© 2026 VOC → PMF</span>
           <span>Built with Claude Code · AI 프로덕트 빌더 클럽 3기</span>
         </div>
       </footer>
