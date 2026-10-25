@@ -109,7 +109,7 @@ export default function Home() {
         {/* 1. 히어로 */}
         <section className="mx-auto flex w-full max-w-5xl flex-col items-start gap-6 px-5 pt-20 pb-16 md:items-center md:px-8 md:pt-36 md:pb-28 md:text-center">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm font-semibold text-primary">VOC → PMF (가제)</span>
+            <span className="text-sm font-semibold text-primary">VOC tracker</span>
             <Badge variant="outline" className="text-muted-foreground">
               기획 단계의 서비스예요
             </Badge>
@@ -216,7 +216,7 @@ export default function Home() {
               </div>
               <Separator />
               <div className="flex flex-col gap-1">
-                <span className="font-semibold text-primary">VOC → PMF 는</span>
+                <span className="font-semibold text-primary">VOC tracker 는</span>
                 <span>같은 고객을 오래 추적하며 다시 연락할 사람 · 시점 · 질문을 알려 줘요.</span>
               </div>
             </CardContent>
@@ -251,7 +251,7 @@ export default function Home() {
       <footer className="mx-auto w-full max-w-5xl px-5 pb-12 md:px-8">
         <Separator className="mb-6" />
         <div className="flex flex-col gap-1 text-sm text-muted-foreground md:flex-row md:justify-between">
-          <span>© 2026 VOC → PMF</span>
+          <span>© 2026 VOC tracker</span>
           <span>Built with Claude Code · AI 프로덕트 빌더 클럽 3기</span>
         </div>
       </footer>

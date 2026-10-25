@@ -11,7 +11,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "VOC → PMF — 고객 인터뷰, PMF 판단으로 이어지게",
+  title: "VOC tracker — 고객 인터뷰, PMF 판단으로 이어지게",
   description:
     "PMF 를 찾아가는 창업자를 위한 인터뷰 툴이에요. 인터뷰를 고객별로 쌓고, PMF 신호를 찾고, 누구에게 언제 다시 연락해 무엇을 물을지 알려 드려요.",
 };
