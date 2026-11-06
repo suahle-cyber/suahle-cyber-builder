@@ -9,7 +9,7 @@ export function StartButton({ className }: { className?: string }) {
   return (
     <Button
       size="lg"
-      className={cn("h-12 rounded-full px-7 text-base font-semibold", className)}
+      className={cn("h-12 px-7 text-base font-semibold", className)}
       onClick={() => toast("곧 열려요. 조금만 기다려 주세요!")}
     >
       곧 열려요

@@ -9,7 +9,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { StartButton } from "@/components/start-button";
 
-const glass = "backdrop-blur-xl";
+const glass = "shadow-none";
 
 const pains = [
   {
@@ -99,25 +99,19 @@ function ExampleScreen() {
 export default function Home() {
   return (
     <>
-      <div className="aurora" aria-hidden>
-        <span />
-        <span />
-        <span />
-      </div>
-
       <main className="flex flex-col overflow-x-clip">
         {/* 1. 히어로 */}
         <section className="mx-auto flex w-full max-w-5xl flex-col items-start gap-6 px-5 pt-20 pb-16 md:items-center md:px-8 md:pt-36 md:pb-28 md:text-center">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm font-semibold text-primary">VOC tracker</span>
+            <span className="font-serif text-base font-semibold">VOC tracker</span>
             <Badge variant="outline" className="text-muted-foreground">
               기획 단계의 서비스예요
             </Badge>
           </div>
-          <h1 className="text-4xl leading-[1.15] font-extrabold tracking-tight md:text-6xl">
+          <h1 className="font-serif text-4xl leading-[1.25] font-semibold tracking-tight md:text-6xl">
             고객 인터뷰,
             <br />
-            <span className="text-primary">PMF 판단으로 이어지게</span>
+            <span className="text-clay">PMF 판단으로 이어지게</span>
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-xl">
             PMF 를 찾아가는 창업자를 위한 인터뷰 툴이에요. 인터뷰를 고객별로 쌓고,
@@ -177,7 +171,7 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2">
             <Card className={glass}>
               <CardHeader className="gap-3">
-                <Badge variant="secondary">처음 써 보면 ✨</Badge>
+                <Badge variant="secondary">처음 써 보면</Badge>
                 <CardTitle className="text-xl leading-snug font-semibold">
                   인터뷰를 올리면 “이번에 다시 연락할 고객과 물어볼 것”이 근거
                   원문과 함께 나와요.
@@ -216,7 +210,7 @@ export default function Home() {
               </div>
               <Separator />
               <div className="flex flex-col gap-1">
-                <span className="font-semibold text-primary">VOC tracker 는</span>
+                <span className="font-semibold text-clay">VOC tracker 는</span>
                 <span>같은 고객을 오래 추적하며 다시 연락할 사람 · 시점 · 질문을 알려 줘요.</span>
               </div>
             </CardContent>
