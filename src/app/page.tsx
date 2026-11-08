@@ -29,15 +29,15 @@ const pains = [
 const steps = [
   {
     name: "쌓기",
-    body: "녹음 파일을 올리거나 쓰던 회의 · 녹음 도구를 연결하면, 인터뷰가 고객별 · 시간순으로 쌓여요.",
+    body: "인터뷰 기록을 글로 붙여넣거나 .txt 파일로 올리면, 고객별 · 시간순으로 쌓여요.",
   },
   {
     name: "발굴",
-    body: "반복되는 문제, 돈을 낸 이유, 강한 신호와 약한 신호를 근거 원문과 함께 찾아 줘요. 결제 · 매출 데이터를 넣으면 고객이 한 말과 실제 결제를 맞춰 봐요.",
+    body: "[분석]을 누르면 반복되는 문제, 돈을 낸 이유, 강한 신호와 약한 신호를 고객이 실제로 한 문장과 함께 찾아 줘요. 기록에 없는 문장은 근거로 쓰지 않아요.",
   },
   {
     name: "알림",
-    body: "근거가 부족한 가설, 다시 연락할 고객, 추가 인터뷰가 필요한 시점을 알려 줘요.",
+    body: "근거가 부족한 가설이 생기면, 그 이야기를 한 고객을 '다시 연락할 사람'으로 띄우고 무엇을 물을지 알려 줘요. 다음 날 아침에는 메일로도 알려 드려요.",
   },
 ];
 
@@ -58,15 +58,15 @@ function ExampleScreen() {
       <p className="mb-3 text-xs font-medium text-muted-foreground">예시 화면</p>
       <Card className={`${glass} gap-0 py-0`}>
         <CardHeader className="flex items-center justify-between gap-2 border-b py-4">
-          <CardTitle className="font-semibold">다음 접점 알림</CardTitle>
-          <Badge variant="secondary">이번 주</Badge>
+          <CardTitle className="font-semibold">다시 연락할 사람</CardTitle>
+          <Badge variant="secondary">1일째</Badge>
         </CardHeader>
         <CardContent className="flex flex-col gap-3 py-5">
           <Card size="sm" className="bg-accent text-accent-foreground ring-0">
             <CardContent className="flex flex-col gap-1">
-              <span className="text-xs font-semibold opacity-80">다시 연락할 고객</span>
+              <span className="text-xs font-semibold opacity-80">누구에게</span>
               <span className="text-sm font-medium">
-                지난달 “돈 내고 쓰겠다”고 한 고객 — 3주째 연락 없음
+                고객 B — 지난주 인터뷰에서 “팀원들이랑 같이 쓰면 회사 카드로 결제할 수도 있어요”
               </span>
             </CardContent>
           </Card>
@@ -76,7 +76,7 @@ function ExampleScreen() {
                 근거가 부족한 가설
               </span>
               <span className="text-sm font-medium">
-                “팀 단위로 결제할 것이다” — 근거 인터뷰 1건
+                “팀 단위로 결제할 것이다” — 근거 문장 1개, 아직 부족
               </span>
             </CardContent>
           </Card>
@@ -86,7 +86,7 @@ function ExampleScreen() {
                 물어볼 것
               </span>
               <span className="text-sm font-medium">
-                지금은 무엇으로 이 문제를 풀고 있는지, 얼마를 쓰는지
+                팀원 몇 명이 함께 쓰면 회사 카드로 결제할지, 지금 회사 카드로 쓰는 도구가 있는지
               </span>
             </CardContent>
           </Card>
@@ -105,7 +105,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-serif text-base font-semibold">VOC tracker</span>
             <Badge variant="outline" className="text-muted-foreground">
-              기획 단계의 서비스예요
+              첫 버전을 만들고 있어요
             </Badge>
           </div>
           <h1 className="font-serif text-4xl leading-[1.25] font-semibold tracking-tight md:text-6xl">
@@ -163,6 +163,10 @@ export default function Home() {
             </div>
             <ExampleScreen />
           </div>
+          <p className="mt-8 text-sm leading-relaxed text-muted-foreground">
+            첫 버전은 글로 된 인터뷰 기록만 받아요. 녹음 파일 받아쓰기, 회의 · 녹음 도구
+            연결, 결제 · 매출 데이터와 맞춰 보기는 다음 버전에서 준비하고 있어요.
+          </p>
         </section>
 
         {/* 4. 이래서 쓰게 돼요 */}
@@ -173,8 +177,8 @@ export default function Home() {
               <CardHeader className="gap-3">
                 <Badge variant="secondary">처음 써 보면</Badge>
                 <CardTitle className="text-xl leading-snug font-semibold">
-                  인터뷰를 올리면 “이번에 다시 연락할 고객과 물어볼 것”이 근거
-                  원문과 함께 나와요.
+                  인터뷰를 넣고 [분석]을 누르면 “다시 연락할 고객과 물어볼 것”이
+                  고객이 한 문장과 함께 나와요.
                 </CardTitle>
               </CardHeader>
             </Card>

@@ -52,6 +52,8 @@
 }
 
 :root {
+  /* 명조 — 고객의 말 · 큰 제목 (DESIGN.md 4, D-10). 글꼴 파일은 layout.tsx 에서 불러옴 */
+  --font-serif: "Noto Serif KR Variable", "Noto Serif KR", serif;
   /* DESIGN.md 3 — 낮의 종이 노트 */
   --background: #FAF6EC;
   --foreground: #1F1B16;

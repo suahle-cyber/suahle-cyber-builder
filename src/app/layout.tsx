@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Noto_Serif_KR } from "next/font/google";
+// 고객의 말 · 큰 제목용 명조 (DESIGN.md 4, D-10). 프로젝트 안 글꼴 파일을 써서 Google 에 요청하지 않음
+import "@fontsource-variable/noto-serif-kr";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
@@ -11,14 +12,6 @@ const pretendard = localFont({
   display: "swap",
 });
 
-// 고객의 말 · 큰 제목용 명조 (DESIGN.md 4, D-10). 빌드할 때 받아 두어 방문자 브라우저는 Google 에 요청하지 않음
-const notoSerif = Noto_Serif_KR({
-  weight: ["400", "600"],
-  variable: "--font-serif",
-  display: "swap",
-  preload: false,
-});
-
 export const metadata: Metadata = {
   title: "VOC tracker — 고객 인터뷰, PMF 판단으로 이어지게",
   description:
@@ -27,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ko" className={`${pretendard.variable} ${notoSerif.variable} h-full antialiased`}>
+    <html lang="ko" className={`${pretendard.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         {children}
         <Toaster theme="light" />
