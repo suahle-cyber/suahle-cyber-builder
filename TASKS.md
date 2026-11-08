@@ -10,14 +10,14 @@
 
 ## 연결 상태 (2026-10-25 확인)
 - GitHub: 연결 확인됨 — suahle-cyber/suahle-cyber-builder, 내 컴퓨터와 GitHub 최신 커밋이 같음
-- Vercel: 연결 확인됨 — https://suahle-cyber-builder.vercel.app 200. 환경변수 2개(Supabase 공개 주소·공개 키) 있음. **GitHub 자동 배포는 연결 안 됨**(지금은 `vercel --prod` 로 직접 올림)
+- Vercel: 연결 확인됨 — https://suahle-cyber-builder.vercel.app 200. 환경변수 2개(Supabase 공개 주소·공개 키) 있음. GitHub 자동 배포 연결됨(2026-11-08, main 에 push 하면 자동 배포)
 - Supabase 커넥터(claude.ai 계정 연결): 연결 확인됨(✔ Connected, 2026-10-25) — 새 세션부터 사용 가능
 - Supabase MCP(프로젝트용): `.mcp.json`(읽기 전용, 이 프로젝트만) — 승인 · 로그인 완료, ✔ Connected (2026-11-06). 새 세션부터 사용 가능
 - Supabase: 무료 요금제 자동 일시 정지 → 2026-11-06 Restore, ACTIVE_HEALTHY 확인 · 표 5개(RLS 켜짐) 그대로. `.env.local` 에 공개 주소·공개 키·DB 비밀번호 있음. CLI 로그인은 안 됨(`db push` 는 DB 비밀번호로 됨)
 
 ## 연결 복구
 - [x] R-01 Supabase DB 반영 경로 — `db push` 는 DB 비밀번호로 로그인 없이 됨(2026-10-25 확인). CLI 의 advisors · gen types 는 멈춰서 Supabase 커넥터(MCP)로 대신함. CLI 로그인(`npx supabase login`)은 필요해지면 그때 한다.
-- [ ] R-02 Vercel ↔ GitHub 자동 배포 연결 — 완료 기준: `git push` 만 해도 Vercel 에 새 배포가 자동으로 생김. 5단계(만들기) 첫 태스크 전에 한다.
+- [x] R-02 Vercel ↔ GitHub 자동 배포 연결 — 2026-11-08 사용자가 Vercel Settings → Git 에서 GitHub 앱 설치 · 저장소 연결. `git push` 만으로 새 배포가 생기는 것 확인
 
 ## M1 기능 태스크 (2단계에서 화면 단위로 다시 나눔 — FLOW.md 기준, 3~4단계에서 다듬는다)
 ### 준비
