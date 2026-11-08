@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Check,
@@ -15,6 +16,7 @@ import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 import type { HomeData, OpenFollowup, PastFollowup } from "./example-home";
 
@@ -46,6 +48,14 @@ const menu = [
 ];
 
 export function AppHeader() {
+  const router = useRouter();
+  const [leaving, setLeaving] = useState(false);
+  async function logout() {
+    setLeaving(true);
+    await createClient().auth.signOut();
+    router.replace("/app/login");
+    router.refresh();
+  }
   return (
     <>
       <header className="border-b">
@@ -74,7 +84,13 @@ export function AppHeader() {
               <Plus data-icon="inline-start" strokeWidth={1.5} />
               인터뷰 넣기
             </Button>
-            <Button variant="ghost" size="lg" onClick={notYet} className="text-muted-foreground">
+            <Button
+              variant="ghost"
+              size="lg"
+              onClick={logout}
+              disabled={leaving}
+              className="text-muted-foreground"
+            >
               <LogOut data-icon="inline-start" strokeWidth={1.5} />
               <span className="hidden md:inline">로그아웃</span>
               <span className="sr-only md:hidden">로그아웃</span>
