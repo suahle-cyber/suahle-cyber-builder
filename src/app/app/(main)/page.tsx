@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { connection } from "next/server";
 import { getExampleHome } from "./example-home";
-import { AppHeader, HomeBoard } from "./home-board";
+import { HomeBoard } from "./home-board";
 
 export const metadata: Metadata = {
   title: "다시 연락할 사람 — Interview clip",
@@ -11,14 +11,11 @@ export const metadata: Metadata = {
 // 홈 — 다시 연락할 사람 (FLOW.md ★, DESIGN.md 6). 4단계에서는 연습용 예시 데이터로만 보여 준다.
 export default function AppHome() {
   return (
-    <>
-      <AppHeader />
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-28 md:px-8 md:pt-14 md:pb-20">
+    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-28 md:px-8 md:pt-14 md:pb-20">
         <Suspense fallback={<HomeSkeleton />}>
           <HomeContent />
         </Suspense>
-      </main>
-    </>
+    </main>
   );
 }
 

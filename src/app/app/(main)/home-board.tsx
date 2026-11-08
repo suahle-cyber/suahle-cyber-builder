@@ -1,22 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Check,
   ChevronDown,
-  House,
-  Lightbulb,
-  LogOut,
-  Plus,
-  Users,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 import type { HomeData, OpenFollowup, PastFollowup } from "./example-home";
 
@@ -37,97 +30,6 @@ function Label({ children, className }: { children: React.ReactNode; className?:
     <span className={cn("text-xs font-medium tracking-[0.04em] text-muted-foreground", className)}>
       {children}
     </span>
-  );
-}
-
-// ── 공통 메뉴 (T-04 미리보기: 노트북은 위, 휴대폰은 아래) ──
-const menu = [
-  { name: "홈", icon: House, current: true },
-  { name: "고객", icon: Users, current: false },
-  { name: "가설", icon: Lightbulb, current: false },
-];
-
-export function AppHeader() {
-  const router = useRouter();
-  const [leaving, setLeaving] = useState(false);
-  async function logout() {
-    setLeaving(true);
-    await createClient().auth.signOut();
-    router.replace("/app/login");
-    router.refresh();
-  }
-  return (
-    <>
-      <header className="border-b">
-        <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-6 px-4 md:px-8">
-          <span className="font-serif text-lg font-semibold">Interview clip</span>
-          <nav className="hidden items-center gap-5 text-sm md:flex">
-            {menu.map((m) => (
-              <button
-                key={m.name}
-                type="button"
-                onClick={m.current ? undefined : notYet}
-                aria-current={m.current ? "page" : undefined}
-                className={cn(
-                  "py-1 transition-colors",
-                  m.current
-                    ? "border-b border-foreground font-semibold"
-                    : "text-muted-foreground hover:text-foreground",
-                )}
-              >
-                {m.name}
-              </button>
-            ))}
-          </nav>
-          <div className="ml-auto flex items-center gap-2">
-            <Button size="lg" onClick={notYet} className="hidden px-3 md:inline-flex">
-              <Plus data-icon="inline-start" strokeWidth={1.5} />
-              인터뷰 넣기
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
-              onClick={logout}
-              disabled={leaving}
-              className="text-muted-foreground"
-            >
-              <LogOut data-icon="inline-start" strokeWidth={1.5} />
-              <span className="hidden md:inline">로그아웃</span>
-              <span className="sr-only md:hidden">로그아웃</span>
-            </Button>
-          </div>
-        </div>
-      </header>
-
-      {/* 휴대폰: 아래 고정 메뉴 */}
-      <nav className="fixed inset-x-0 bottom-0 z-10 border-t bg-background md:hidden">
-        <div className="grid h-16 grid-cols-4">
-          {menu.map((m) => (
-            <button
-              key={m.name}
-              type="button"
-              onClick={m.current ? undefined : notYet}
-              aria-current={m.current ? "page" : undefined}
-              className={cn(
-                "flex flex-col items-center justify-center gap-1 text-xs",
-                m.current ? "font-semibold text-foreground" : "text-muted-foreground",
-              )}
-            >
-              <m.icon className="size-5" strokeWidth={1.5} />
-              {m.name}
-            </button>
-          ))}
-          <button
-            type="button"
-            onClick={notYet}
-            className="flex flex-col items-center justify-center gap-1 text-xs font-semibold text-clay"
-          >
-            <Plus className="size-5" strokeWidth={1.5} />
-            인터뷰 넣기
-          </button>
-        </div>
-      </nav>
-    </>
   );
 }
 
