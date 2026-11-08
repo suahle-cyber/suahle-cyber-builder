@@ -50,7 +50,7 @@ export function AppHeader() {
     <>
       <header className="border-b">
         <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-6 px-4 md:px-8">
-          <span className="font-serif text-lg font-semibold">VOC tracker</span>
+          <span className="font-serif text-lg font-semibold">Interview clip</span>
           <nav className="hidden items-center gap-5 text-sm md:flex">
             {menu.map((m) => (
               <button

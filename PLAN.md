@@ -1,10 +1,10 @@
-# PLAN.md — VOC tracker 2주 계획
+# PLAN.md — Interview clip 2주 계획
 
 > 기준: onepager-voc-pmf.pdf(기획 v0, 2026-10-25) + 강의 운영진 2주 작업 제안 + DECISIONS.md.
 > DECISIONS.md 의 최신 결정이 이 문서의 초기 제안보다 우선한다.
 
 ## 제품 개요
-- 서비스 이름: VOC tracker (D-01)
+- 서비스 이름: Interview clip (D-12, 전 이름 VOC tracker · D-01)
 - 한 줄: 고객 인터뷰 기록을 고객별로 쌓아 PMF 신호를 찾고, 누구에게 · 언제 · 무엇을 다시 물을지 알려 주는 창업자용 툴.
 - 플랫폼: 웹앱. 인터뷰를 마친 뒤 노트북에서 기록을 넣고 '다시 연락할 사람' 목록을 보는 업무 도구라서. 알림은 앱 푸시 대신 메일 + 화면 안 '이번 주 연락할 사람' 목록.
 

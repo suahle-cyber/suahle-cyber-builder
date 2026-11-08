@@ -1,4 +1,4 @@
-# DB.md — VOC tracker 저장할 데이터 (M1)
+# DB.md — Interview clip 저장할 데이터 (M1)
 
 > 3단계 확정 · 생성 완료 (2026-10-25, D-07 · D-08). migration: `supabase/migrations/20261025121928_m1_schema.sql`, 타입: `src/lib/database.types.ts`. FLOW.md 화면 6개 · DECISIONS.md D-01~D-06 기준. 저장 위치: Supabase Postgres(1주차에 연결한 프로젝트). 로그인: Supabase Auth Google(D-05).
 > 바꿀 때는 `npx supabase migration new` → `npx supabase db push` 로만 한다(AGENTS.md).

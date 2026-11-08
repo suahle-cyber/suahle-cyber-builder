@@ -10,8 +10,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## 2주차 규칙
 
-# VOC tracker — 작업 규칙
-(강의 프롬프트의 가칭 "VOC → PMF (가제)"는 2026-10-25 사용자 결정으로 "VOC tracker"로 바뀌었다. DECISIONS.md D-01)
+# Interview clip — 작업 규칙
+(강의 프롬프트의 가칭 "VOC → PMF (가제)"는 2026-10-25 사용자 결정으로 "VOC tracker"로, 2026-11-08 다시 "Interview clip"으로 바뀌었다. DECISIONS.md D-01 · D-12)
 
 ## 진행 순서
 - 6단계: 1 계획 → 2 화면 흐름(FLOW.md) → 3 저장할 데이터(DB.md) → 4 디자인(DESIGN.md) → 5 만들기 → 6 점검·테스트. 사용자가 붙여넣은 단계만 한다.

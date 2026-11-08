@@ -5,7 +5,7 @@ import { getExampleHome } from "./example-home";
 import { AppHeader, HomeBoard } from "./home-board";
 
 export const metadata: Metadata = {
-  title: "다시 연락할 사람 — VOC tracker",
+  title: "다시 연락할 사람 — Interview clip",
 };
 
 // 홈 — 다시 연락할 사람 (FLOW.md ★, DESIGN.md 6). 4단계에서는 연습용 예시 데이터로만 보여 준다.
