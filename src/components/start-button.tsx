@@ -1,18 +1,16 @@
-"use client";
-
-import { toast } from "sonner";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-// 시작하기 버튼이 갈 곳: 준비 중 → 누르면 알림만 띄운다
+// 랜딩 [써 보기] → 제품 화면 /app (T-02). 로그인 안 한 사람을 로그인 화면으로 보내는 것은 T-03 에서.
 export function StartButton({ className }: { className?: string }) {
   return (
-    <Button
-      size="lg"
-      className={cn("h-12 px-7 text-base font-semibold", className)}
-      onClick={() => toast("곧 열려요. 조금만 기다려 주세요!")}
-    >
-      곧 열려요
+    <Button asChild size="lg" className={cn("h-12 px-7 text-base font-semibold", className)}>
+      <Link href="/app">
+        써 보기
+        <ArrowRight data-icon="inline-end" strokeWidth={1.5} />
+      </Link>
     </Button>
   );
 }

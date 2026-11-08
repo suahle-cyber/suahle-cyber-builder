@@ -228,7 +228,7 @@ export default function Home() {
               고객의 말을, 다음 결정으로
             </h2>
             <p className="text-base text-muted-foreground">
-              열리면 가장 먼저 써 보고 솔직한 의견을 들려주세요.
+              예시 데이터로 먼저 둘러보고, 솔직한 의견을 들려주세요.
             </p>
             <StartButton />
           </Card>
